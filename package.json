@@ -1,0 +1,44 @@
+{
+  "name": "electronb",
+  "version": "1.0.0",
+  "main": "./dist/main.bundle.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "concurrently \"npm run electron\" \"npm run webpack:watch\" \"npm run css:dev\"",
+    "electron": "nodemon --exec electron .",
+    "webpack:watch": "webpack --watch",
+    "css:dev": "tailwindcss -i ./src/css/dev.css -o ./dist/main.css --watch"
+    
+  },
+  "build": {
+    "appId": "com.your_company_name",
+    "copyright": "Copyright © 2023 Your Company ",
+    "asar": true,
+    "files": [
+      "dist/**",
+      "!**/node_modules/**" 
+    ],
+    "directories": {
+      "output": "C:/Users/arxstd/Documents/testapp"
+    }
+    
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "copy-webpack-plugin": "^11.0.0",
+    "electron": "^27.1.2",
+    "electron-builder": "^24.9.1",
+    "fs-extra": "^11.1.1",
+    "html-minimizer-webpack-plugin": "^4.4.0",
+    "javascript-obfuscator": "^4.1.0",
+    "path-browserify": "^1.0.1",
+    "tailwindcss": "^3.3.5",
+    "terser-webpack-plugin": "^5.3.9",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-obfuscator": "^3.5.1"
+  },
+  "dependencies": {
+    "html-webpack-plugin": "^5.5.3"
+  }
+}
